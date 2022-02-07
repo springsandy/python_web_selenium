@@ -4,7 +4,7 @@ import time
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 
-idol = input("찾고 싶은 아이돌을 입력해주세요!\n")
+idol = input("찾고 싶은 아이돌을 입력해주세요!")
 
 driver = webdriver.Chrome(chrome_options=options)
 driver.get("http://www.naver.com/")
