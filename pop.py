@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget, QPushButton, QHBoxLayout, QVBoxLayout
 
 class MyApp(QWidget):
     def __init__(self):
@@ -7,8 +7,23 @@ class MyApp(QWidget):
         self.initUI()
 
     def initUI(self):
+        searchButton = QPushButton('검색')
+        cancelButton = QPushButton('취소')
+
+        hbox = QHBoxLayout()
+        hbox.addStretch(1)
+        hbox.addWidget(searchButton)
+        hbox.addWidget(cancelButton)
+        hbox.addStretch(1)
+
+        vbox = QVBoxLayout()
+        vbox.addStretch(3)
+        vbox.addLayout(hbox)
+        vbox.addStretch(1)
+
+        self.setLayout(vbox)
+
         self.setWindowTitle('idol search')
-        self.move(300, 300)
         self.resize(400, 200)
         self.center()
         self.show()
